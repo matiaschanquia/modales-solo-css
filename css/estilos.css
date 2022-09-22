@@ -1,0 +1,163 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;600&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Oswald', sans-serif;
+    position: relative;
+}
+
+li {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+.header {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: black url(../img/moon.jpg) no-repeat scroll center center;
+    background-size: cover;
+}
+
+.titulo {
+    text-transform: uppercase;
+    font-weight: 800;
+    font-size: 50px;
+    border: 2px solid rgb(72, 71, 71);
+    padding: 14px 30px;
+    background-color: rgba(0, 10, 82, 0.311);
+}
+
+.linea-vertical {
+    border-left: 2px solid rgb(72, 71, 71);
+    height: 50px;
+}
+
+.container-lista {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.link {
+    display: block;
+    color: #fff;
+    font-weight: 300;
+    letter-spacing: 2px;
+    border: 2px solid rgb(72, 71, 71);
+    padding: 14px 20px;
+    background-color: rgba(0, 10, 82, 0.311);
+    transition: background-color .2s ease-in-out;
+}
+
+.link:hover {
+    background-color: rgba(0, 10, 82, 0.445);
+}
+
+.link-medio {
+    border-left: none;
+    border-right: none;
+}
+
+.section {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.256);
+    pointer-events: none;
+    opacity: 0;
+    display: flex;
+    align-items: center;
+}
+
+.section:target {
+    animation: show-bg .4s;
+    pointer-events: unset;
+    opacity: 1;
+}
+
+@keyframes show-bg {
+    0% {
+        background-color: transparent;
+    }
+}
+
+.container {
+    background-color: #fff;
+    width: 90%;
+    max-width: 700px;
+    margin: 0 auto;
+    position: relative;
+    border-radius: 17px;
+    max-height: 95%;
+}
+
+.section:target .container {
+    animation: show-modal .4s .4s backwards;
+}
+
+@keyframes show-modal {
+    0% {
+        transform: translateY(-150vh);
+    }
+}
+
+.container-cruz {
+    display: inline-block;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    width: 40px;
+    height: 40px;
+}
+
+.linea {
+    display: block;
+    position: absolute;
+    top: 50%;
+    width: 34px;
+    border-top: 2px solid black;
+}
+
+.linea1 {
+    transform: rotate(45deg);
+}
+
+.linea2 {
+    transform: rotate(-45deg);
+}
+
+.container > h2 {
+    text-align: center;
+    margin: 20px 0;
+}
+
+.proyectos {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    margin: 0 20px 20px;
+}
+
+.img-perfil {
+    display: block;
+    width: 150px;
+    margin: 0 auto;
+    border-radius: 50%;
+}
+
+.texto {
+    margin: 20px;
+}
